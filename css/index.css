@@ -1,289 +1,160 @@
-        /* ===== БАЗОВЫЕ СТИЛИ ===== */
-        
-        /* Сброс стандартных отступов и границ для всех элементов */
-        * {
-            margin: 0;          /* Убирает внешние отступы */
-            padding: 0;         /* Убирает внутренние отступы */
-            box-sizing: border-box; /* Гарантирует, что padding и border включаются в ширину/высоту */
-        }
-
-        /* Основные стили для тела документа */
+        /* Базовые настройки страницы */
         body {
-            font-family: 'IBM Plex Mono', monospace; /* Основной шрифт */
-            background-color: #0a0a0a;               /* Темный фон сайта */
-            color: #ffffff;                          /* Белый цвет текста */
-            line-height: 1.4;                        /* Межстрочный интервал */
+            font-family: 'IBM Plex Mono', monospace; /* Возвращаем правильный шрифт */
+            background-color: black;        /* Черный фон */
+            color: white;                   /* Белый текст */
+            margin: 0;                      /* Убираем отступы */
+            padding: 0;                     /* Убираем внутренние отступы */
         }
 
-        /* ===== НАВИГАЦИОННАЯ ПАНЕЛЬ ===== */
-        
-        .navbar {
-            background: #4a148c;         /* Фиолетовый фон навигации */
-            padding: 20px 40px;          /* Внутренние отступы: 20px сверху/снизу, 40px слева/справа */
-            display: flex;               /* Flexbox для горизонтального расположения */
-            justify-content: space-between; /* Распределение пространства между элементами */
-            align-items: center;         /* Вертикальное выравнивание по центру */
-            position: relative;          /* Относительное позиционирование для дочерних элементов */
+        /* Шапка сайта */
+        .header {
+            background-color: #4a148c;      /* Фиолетовый цвет */
+            padding: 20px;                  /* Отступы внутри */
+            text-align: center;             /* Текст по центру */
+            position: relative;             /* Для позиционирования аватара */
         }
 
-        /* Логотип/бренд в навигации */
-        .nav-brand {
-            font-size: 24px;             /* Размер шрифта */
-            font-weight: 600;            /* Жирность шрифта (полужирный) */
-            color: #fff;                 /* Белый цвет текста */
-            letter-spacing: 1px;         /* Межбуквенный интервал */
-            flex: 1;                     /* Занимает доступное пространство */
+        /* Логотип */
+        .logo {
+            font-size: 28px;                /* Большой размер */
+            font-weight: 600;               /* Полужирный шрифт */
+            color: white;                   /* Белый цвет */
+            margin-bottom: 15px;            /* Отступ снизу */
         }
 
-        /* Центральный контейнер для ссылок и поиска */
-        .nav-center {
-            display: flex;               /* Flexbox для горизонтального расположения */
-            align-items: center;         /* Вертикальное выравнивание */
-            gap: 40px;                   /* Расстояние между элементами */
-            position: absolute;          /* Абсолютное позиционирование */
-            left: 50%;                   /* Сдвиг на 50% от левого края */
-            transform: translateX(-50%); /* Сдвиг назад на 50% своей ширины для точного центрирования */
+        /* Меню навигации */
+        .nav {
+            display: flex;                  /* Элементы в строку */
+            justify-content: center;        /* По центру */
+            gap: 30px;                      /* Расстояние между кнопками */
+            margin-bottom: 15px;            /* Отступ снизу */
         }
 
-        /* Контейнер для навигационных ссылок */
-        .nav-links {
-            display: flex;               /* Flexbox для горизонтального расположения */
-            gap: 40px;                   /* Расстояние между ссылками */
+        /* Кнопки меню */
+        .nav a {
+            color: #ffd700;                 /* Золотой цвет */
+            text-decoration: none;          /* Убираем подчеркивание */
+            font-size: 18px;                /* Размер текста */
+            font-weight: 500;               /* Средняя жирность */
+            padding: 5px 10px;              /* Отступы вокруг текста */
+            opacity: 0.7;                   /* Немного прозрачности */
         }
 
-        /* Стили для отдельных ссылок навигации */
-        .nav-links a {
-            color: #fff;                 /* Белый цвет текста */
-            text-decoration: none;       /* Убирает подчеркивание */
-            font-size: 21px;             /* Размер шрифта */
-            font-weight: 600;            /* Жирность шрифта */
-            transition: all 0.3s ease;   /* Плавный переход для всех свойств */
-            padding: 8px 12px;           /* Внутренние отступы */
-            border-radius: 4px;          /* Закругленные углы */
-            white-space: nowrap;         /* Запрет переноса текста */
-            opacity: 0.3;                /* Полупрозрачность по умолчанию */
+        /* Эффект при наведении на кнопки */
+        .nav a:hover {
+            opacity: 1;                     /* Полная непрозрачность */
         }
 
-        /* Состояние при наведении на ссылки */
-        .nav-links a:hover {
-            text-decoration: underline;  /* Подчеркивание при наведении */
-            text-underline-offset: 29px; /* Смещение подчеркивания вниз */
-            opacity: 1;                  /* Полная непрозрачность */
-            color: #ffd700;              /* Золотистый цвет текста */
-        }
-
-        /* Контейнер для поиска */
-        .search-container {
-            display: flex;               /* Flexbox для горизонтального расположения */
-            align-items: center;         /* Вертикальное выравнивание */
+        /* Поисковая строка */
+        .search {
+            display: flex;                  /* Элементы в строку */
+            justify-content: center;        /* По центру */
+            gap: 10px;                      /* Расстояние между полем и кнопкой */
         }
 
         /* Поле ввода поиска */
-        .search-input {
-            background: rgba(255, 255, 255, 0.1); /* Полупрозрачный белый фон */
-            border: 1px solid #ffd700;   /* Золотистая рамка */
-            border-radius: 4px;          /* Закругленные углы */
-            padding: 8px 12px;           /* Внутренние отступы */
-            color: #fff;                 /* Белый цвет текста */
-            font-family: 'IBM Plex Mono', monospace; /* Шрифт как у основного текста */
-            width: 0;                    /* Начальная ширина (скрыто) */
-            opacity: 0;                  /* Начальная прозрачность (скрыто) */
-            transition: all 0.3s ease;   /* Плавный переход для анимации */
-        }
-
-        /* Активное состояние поля поиска (когда открыто) */
-        .search-input.active {
-            width: 200px;                /* Ширина поля поиска */
-            opacity: 1;                  /* Полная видимость */
-            margin-right: 10px;          /* Отступ справа от кнопки */
-        }
-
-        /* Стили для placeholder текста */
-        .search-input::placeholder {
-            color: #ccc;                 /* Серый цвет placeholder */
+        .search input {
+            padding: 8px;                   /* Отступы внутри */
+            width: 200px;                   /* Ширина поля */
+            border: 1px solid #ffd700;      /* Золотая рамка */
+            background-color: rgba(255, 255, 255, 0.1); /* Полупрозрачный фон */
+            color: white;                   /* Белый текст */
+            font-family: 'IBM Plex Mono', monospace; /* Правильный шрифт */
         }
 
         /* Кнопка поиска */
-        .search-button {
-            background: none;            /* Прозрачный фон */
-            border: none;                /* Без рамки */
-            color: #ffd700;              /* Золотистый цвет */
-            font-size: 18px;             /* Размер иконки */
-            cursor: pointer;             /* Указатель при наведении */
-            padding: 8px;                /* Внутренние отступы */
-            border-radius: 4px;          /* Закругленные углы */
-            transition: background-color 0.3s ease; /* Плавный переход фона */
-            opacity: 0.3;                /* Полупрозрачность по умолчанию */
+        .search button {
+            background-color: #ffd700;      /* Золотой фон */
+            color: black;                   /* Черный текст */
+            border: none;                   /* Без рамки */
+            padding: 8px 15px;              /* Отступы */
+            cursor: pointer;                /* Указатель при наведении */
+            font-family: 'IBM Plex Mono', monospace; /* Правильный шрифт */
+            font-weight: 500;               /* Средняя жирность */
         }
 
-        /* Состояние кнопки поиска при наведении */
-        .search-button:hover {
-            opacity: 1;                  /* Полная непрозрачность */
-        }
-
-        /* Контейнер для аватара пользователя */
-        .nav-avatar {
-            flex: 1;                     /* Занимает доступное пространство */
-            display: flex;               /* Flexbox для выравнивания */
-            justify-content: flex-end;   /* Выравнивание по правому краю */
-        }
-
-        /* Стили аватара пользователя */
-        .avatar {
-            width: 44px;                 /* Ширина аватара */
-            height: 44px;                /* Высота аватара */
-            background-color: #ffd700;   /* Золотистый фон */
-            border-radius: 50%;          /* Круглая форма */
-            display: flex;               /* Flexbox для центрирования текста */
-            align-items: center;         /* Вертикальное центрирование */
-            justify-content: center;     /* Горизонтальное центрирование */
-            color: #000;                 /* Черный цвет текста */
-            font-weight: bold;           /* Жирный текст */
-            text-decoration: none;       /* Убирает подчеркивание */
-            transition: transform 0.3s ease; /* Плавная анимация трансформации */
-        }
-
-        /* Анимация аватара при наведении */
-        .avatar:hover {
-            transform: scale(1.1);       /* Увеличение на 10% */
-        }
-
-        /* ===== ОСНОВНОЙ КОНТЕЙНЕР СОДЕРЖИМОГО ===== */
-        
-        .container {
-            max-width: 1400px;           /* Максимальная ширина контента */
-            margin: 0 auto;              /* Центрирование по горизонтали */
-            padding: 0 20px;             /* Боковые отступы */
-        }
-
-        /* ===== СЕКЦИИ С ФИЛЬМАМИ ===== */
-        
-        /* Маленькая секция (Новое в подписке) */
-        .section-small {
-            background-color: #000;      /* Черный фон секции */
-            padding: 30px 0;             /* Вертикальные отступы */
-        }
-
-        /* Большая секция (Рекомендуем посмотреть) */
-        .section-large {
-            background-color: #000;      /* Черный фон секции */
-            padding: 50px 0;             /* Большие вертикальные отступы */
+        /* Основное содержание */
+        .content {
+            padding: 40px 20px;             /* Отступы вокруг контента */
         }
 
         /* Заголовок секции */
-        .section-header {
-            display: flex;               /* Flexbox для расположения */
-            align-items: center;         /* Вертикальное выравнивание */
-            margin-bottom: 40px;         /* Отступ снизу */
-        }
-
-        /* Название секции */
         .section-title {
-            font-size: 24px;             /* Размер шрифта */
-            font-weight: 600;            /* Жирность шрифта */
-            color: #ffd700;              /* Золотистый цвет */
-            margin-right: 15px;          /* Отступ справа */
+            font-size: 24px;                /* Размер заголовка */
+            color: #ffd700;                 /* Золотой цвет */
+            margin-bottom: 30px;            /* Отступ снизу */
+            text-align: center;             /* Текст по центру */
+            font-weight: 600;               /* Полужирный шрифт */
         }
 
-        /* Кнопка "больше" в секции */
-        .section-more {
-            color: #ffd700;              /* Золотистый цвет */
-            text-decoration: none;       /* Убирает подчеркивание */
-            font-size: 24px;             /* Размер шрифта */
-            font-weight: 600;            /* Жирность шрифта */
-            width: 25px;                 /* Фиксированная ширина */
-            height: 60px;                /* Фиксированная высота */
-            display: flex;               /* Flexbox для центрирования */
-            align-items: center;         /* Вертикальное центрирование */
-            justify-content: center;     /* Горизонтальное центрирование */
-        }
-
-        /* ===== СЕТКА ФИЛЬМОВ ===== */
-        
-        .movies-grid {
-            display: grid;                          /* CSS Grid для сетки */
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Автоподбор колонок */
-            gap: 40px;                             /* Расстояние между карточками */
+        /* Сетка фильмов */
+        .movies {
+            display: flex;                  /* Карточки в строку */
+            flex-wrap: wrap;                /* Перенос на новую строку */
+            justify-content: center;        /* Выравнивание по центру */
+            gap: 20px;                      /* Расстояние между карточками */
         }
 
         /* Карточка фильма */
-        .movie-card {
-            background: #1a1a1a;         /* Темно-серый фон карточки */
-            border-radius: 12px;         /* Закругленные углы */
-            overflow: hidden;            /* Скрывает выходящее за границы */
-            transition: all 0.3s ease;   /* Плавный переход всех свойств */
-            border: 1px solid #333;      /* Темно-серая рамка */
-            display: flex;               /* Flexbox для вертикального расположения */
-            flex-direction: column;      /* Вертикальное направление */
-            height: fit-content;         /* Высота по содержимому */
+        .movie {
+            width: 250px;                   /* Ширина карточки */
+            background-color: #1a1a1a;      /* Темно-серый фон */
+            border-radius: 8px;             /* Закругленные углы */
+            overflow: hidden;               /* Скрываем выходящее за границы */
+            border: 1px solid #333;         /* Темная рамка */
         }
 
-        /* Анимация карточки при наведении */
-        .movie-card:hover {
-            transform: translateY(-8px); /* Подъем карточки вверх */
-            border-color: #ffd700;       /* Золотистая рамка */
-            box-shadow: 0 10px 30px rgba(255, 215, 0, 0.2); /* Золотистая тень */
+        /* Изображение фильма */
+        .movie img {
+            width: 100%;                    /* Ширина на всю карточку */
+            height: 350px;                  /* Фиксированная высота */
+            object-fit: cover;              /* Обрезаем изображение */
         }
 
-        /* Контейнер для изображения фильма */
-        .movie-image {
-            width: 100%;                 /* Ширина 100% родителя */
-            height: 440px;               /* Фиксированная высота для постеров */
-            background-color: #333;      /* Серый фон-заглушка */
-            position: relative;          /* Для позиционирования рейтинга */
-            overflow: hidden;            /* Скрывает выходящее за границы */
-        }
-
-        /* Изображение постера */
-        .movie-image img {
-            width: 100%;                 /* Ширина 100% контейнера */
-            height: 100%;                /* Высота 100% контейнера */
-            object-fit: cover;           /* Обрезка и заполнение контейнера */
-            transition: transform 0.3s ease; /* Плавное увеличение */
-        }
-
-        /* Увеличение изображения при наведении на карточку */
-        .movie-card:hover .movie-image img {
-            transform: scale(1.05);      /* Увеличение на 5% */
-        }
-
-        /* Бейдж с рейтингом фильма */
-        .movie-rating {
-            position: absolute;          /* Абсолютное позиционирование */
-            top: 15px;                   /* Отступ сверху */
-            left: 15px;                  /* Отступ слева */
-            background: #ffd700;         /* Золотистый фон */
-            color: #000;                 /* Черный цвет текста */
-            font-size: 16px;             /* Размер шрифта */
-            font-weight: 600;            /* Жирность шрифта */
-            padding: 8px 12px;           /* Внутренние отступы */
-            border-radius: 6px;          /* Закругленные углы */
-            z-index: 2;                  /* Поверх других элементов */
-        }
-
-        /* Контейнер для текстовой информации о фильме */
-        .movie-content {
-            padding: 25px;               /* Внутренние отступы */
-            flex-grow: 1;                /* Занимает доступное пространство */
-            display: flex;               /* Flexbox для расположения */
-            flex-direction: column;      /* Вертикальное направление */
+        /* Информация о фильме */
+        .movie-info {
+            padding: 15px;                  /* Отступы внутри */
         }
 
         /* Название фильма */
         .movie-title {
-            font-size: 18px;             /* Размер шрифта */
-            font-weight: 600;            /* Жирность шрифта */
-            color: #ccc;                 /* Светло-серый цвет */
-            margin-bottom: 12px;         /* Отступ снизу */
-            line-height: 1.3;            /* Межстрочный интервал */
-            min-height: 46px;            /* Минимальная высота для выравнивания */
-            display: flex;               /* Flexbox для центрирования */
-            align-items: center;         /* Вертикальное центрирование */
+            font-size: 16px;                /* Размер текста */
+            font-weight: 600;               /* Полужирный шрифт */
+            margin-bottom: 5px;             /* Отступ снизу */
+            color: #cccccc;                 /* Светло-серый цвет */
         }
 
-        /* Информация о фильме (год и жанры) */
-        .movie-info {
-            font-size: 14px;             /* Меньший размер шрифта */
-            color: #ccc;                 /* Светло-серый цвет */
-            margin-top: auto;            /* Прижимает к низу карточки */
+        /* Детали фильма */
+        .movie-details {
+            font-size: 14px;                /* Меньший размер */
+            color: #888888;                 /* Серый цвет */
+            font-weight: 400;               /* Обычный шрифт */
+        }
+
+        /* Рейтинг фильма */
+        .rating {
+            background-color: #ffd700;      /* Золотой фон */
+            color: black;                   /* Черный текст */
+            padding: 5px 10px;              /* Отступы */
+            border-radius: 4px;             /* Закругленные углы */
+            font-weight: 600;               /* Полужирный шрифт */
+            position: absolute;             /* Позиционирование */
+            margin: 10px;                   /* Отступы от края */
+        }
+
+        /* Аватар пользователя */
+        .avatar {
+            width: 40px;                    /* Ширина аватара */
+            height: 40px;                   /* Высота аватара */
+            background-color: #ffd700;      /* Золотой фон */
+            border-radius: 50%;             /* Круглая форма */
+            display: flex;                  /* Для центрирования текста */
+            align-items: center;            /* Вертикальное центрирование */
+            justify-content: center;        /* Горизонтальное центрирование */
+            color: black;                   /* Черный текст */
+            font-weight: 600;               /* Полужирный шрифт */
+            position: absolute;             /* Абсолютное позиционирование */
+            top: 20px;                      /* Отступ сверху */
+            right: 20px;                    /* Отступ справа */
         }

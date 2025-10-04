@@ -3,161 +3,122 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Эльбрус Кино</title>
+    <title>KИHO - Кинопортал</title>
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/index.css">
-
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Навигационное меню -->
-    <nav class="navbar">
-        <div class="nav-brand">KИHO</div>
-        <div class="nav-center">
-            <div class="nav-links">
-                <a href="#">MOE KИHO</a>
-                <a href="#">МАГАЗИН</a>
-                <a href="#">ПОКУПКИ</a>
-            </div>
-            <div class="search-container">
-                <input type="text" class="search-input" placeholder="Поиск...">
-                <button class="search-button">⌕</button>
-            </div>
-        </div>
-        <div class="nav-avatar">
-            <a href="#" class="avatar">SP</a>
-        </div>
-    </nav>
-
-    <!-- Секция "Новое в подписке" -->
-    <section class="section-small">
-        <div class="container">
-            <div class="section-header">
-                <div class="section-title">Новое в подписке</div>
-                <a href="#" class="section-more">></a>
-            </div>
-            
-            <div class="movies-grid">
-                <div class="movie-card">
-                    <div class="movie-image">
-                        <img src="img/bryklin.jpg" alt="Сиротский Бруклин">
-                        <div class="movie-rating">8.4</div>
-                    </div>
-                    <div class="movie-content">
-                        <div class="movie-title">Сиротский Бруклин</div>
-                        <div class="movie-info">2019, Драма, Детектив</div>
-                    </div>
-                </div>
-
-                <div class="movie-card">
-                    <div class="movie-image">
-                        <img src="img/doctorStrange.jpg" alt="Доктор Стрэндж">
-                        <div class="movie-rating">7.5</div>
-                    </div>
-                    <div class="movie-content">
-                        <div class="movie-title">Доктор Стрэндж</div>
-                        <div class="movie-info">2016, Фантастика, Боевик</div>
-                    </div>
-                </div>
-
-                <div class="movie-card">
-                    <div class="movie-image">
-                        <img src="img/glass.jpg" alt="Стекло">
-                        <div class="movie-rating">6.7</div>
-                    </div>
-                    <div class="movie-content">
-                        <div class="movie-title">Стекло</div>
-                        <div class="movie-info">2019, Триллер, Драма</div>
-                    </div>
-                </div>
-
-                <div class="movie-card">
-                    <div class="movie-image">
-                        <img src="img/minions.jpg" alt="Миньоны">
-                        <div class="movie-rating">6.9</div>
-                    </div>
-                    <div class="movie-content">
-                        <div class="movie-title">Миньоны</div>
-                        <div class="movie-info">2015, Мультфильм, Комедия</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Секция "Рекомендуем посмотреть" -->
-    <section class="section-large">
-        <div class="container">
-            <div class="section-header">
-                <div class="section-title">Рекомендуем посмотреть</div>
-                <a href="#" class="section-more">></a>
-            </div>
-
-            <div class="movies-grid">
-                <div class="movie-card">
-                    <div class="movie-image">
-                        <img src="img/mulan.jpeg" alt="Мулан">
-                        <div class="movie-rating">7.2</div>
-                    </div>
-                    <div class="movie-content">
-                        <div class="movie-title">Мулан</div>
-                        <div class="movie-info">2020, Боевик, Драма</div>
-                    </div>
-                </div>
-
-                <div class="movie-card">
-                    <div class="movie-image">
-                        <img src="img/solo.jpg" alt="Соло">
-                        <div class="movie-rating">6.9</div>
-                    </div>
-                    <div class="movie-content">
-                        <div class="movie-title">Соло</div>
-                        <div class="movie-info">2018, Фантастика, Приключения</div>
-                    </div>
-                </div>
-
-                <div class="movie-card">
-                    <div class="movie-image">
-                        <img src="img/starWars.jpg" alt="Звёздные Войны: Пробуждение Силы">
-                        <div class="movie-rating">7.8</div>
-                    </div>
-                    <div class="movie-content">
-                        <div class="movie-title">Звёздные Войны: Пробуждение Силы</div>
-                        <div class="movie-info">2015, Фантастика, Боевик</div>
-                    </div>
-                </div>
-
-                <div class="movie-card">
-                    <div class="movie-image">
-                        <img src="img/zveropolis.jpg" alt="Зверополис">
-                        <div class="movie-rating">8.0</div>
-                    </div>
-                    <div class="movie-content">
-                        <div class="movie-title">Зверополис</div>
-                        <div class="movie-info">2016, Мультфильм, Комедия</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <script>
-        // Функционал поиска
-        const searchButton = document.querySelector('.search-button');
-        const searchInput = document.querySelector('.search-input');
+    <!-- Шапка сайта -->
+    <div class="header">
+        <div class="logo">KИHO</div>
         
-        searchButton.addEventListener('click', function() {
-            searchInput.classList.toggle('active');
-            if (searchInput.classList.contains('active')) {
-                searchInput.focus();
-            }
-        });
+        <!-- Меню навигации -->
+        <div class="nav">
+            <a href="#">MOE KИHO</a>
+            <a href="#">МАГАЗИН</a>
+            <a href="#">ПОКУПКИ</a>
+        </div>
         
-        // Закрытие поиска при клике вне поля
-        document.addEventListener('click', function(event) {
-            if (!event.target.closest('.search-container')) {
-                searchInput.classList.remove('active');
-            }
-        });
-    </script>
+        <!-- Поиск -->
+        <div class="search">
+            <input type="text" placeholder="Поиск фильмов...">
+            <button>Найти</button>
+        </div>
+        
+        <!-- Аватар пользователя -->
+        <div class="avatar">U</div>
+    </div>
+
+    <!-- Основное содержание -->
+    <div class="content">
+        <!-- Первая секция - Новые фильмы -->
+        <div class="section-title">Новое в подписке</div>
+        <div class="movies">
+            <!-- Карточка фильма 1 -->
+            <div class="movie">
+                <div class="rating">8.4</div>
+                <img src="img/bryklin.jpg" alt="Сиротский Бруклин">
+                <div class="movie-info">
+                    <div class="movie-title">Сиротский Бруклин</div>
+                    <div class="movie-details">2019, Драма, Детектив</div>
+                </div>
+            </div>
+
+            <!-- Карточка фильма 2 -->
+            <div class="movie">
+                <div class="rating">7.5</div>
+                <img src="img/doctorStrange.jpg" alt="Доктор Стрэндж">
+                <div class="movie-info">
+                    <div class="movie-title">Доктор Стрэндж</div>
+                    <div class="movie-details">2016, Фантастика, Боевик</div>
+                </div>
+            </div>
+
+            <!-- Карточка фильма 3 -->
+            <div class="movie">
+                <div class="rating">6.7</div>
+                <img src="img/glass.jpg" alt="Стекло">
+                <div class="movie-info">
+                    <div class="movie-title">Стекло</div>
+                    <div class="movie-details">2019, Триллер, Драма</div>
+                </div>
+            </div>
+
+            <!-- Карточка фильма 4 -->
+            <div class="movie">
+                <div class="rating">6.9</div>
+                <img src="img/minions.jpg" alt="Миньоны">
+                <div class="movie-info">
+                    <div class="movie-title">Миньоны</div>
+                    <div class="movie-details">2015, Мультфильм, Комедия</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Вторая секция - Рекомендации -->
+        <div class="section-title" style="margin-top: 50px;">Рекомендуем посмотреть</div>
+        <div class="movies">
+            <!-- Карточка фильма 5 -->
+            <div class="movie">
+                <div class="rating">7.2</div>
+                <img src="img/mulan.jpeg" alt="Мулан">
+                <div class="movie-info">
+                    <div class="movie-title">Мулан</div>
+                    <div class="movie-details">2020, Боевик, Драма</div>
+                </div>
+            </div>
+
+            <!-- Карточка фильма 6 -->
+            <div class="movie">
+                <div class="rating">6.9</div>
+                <img src="img/solo.jpg" alt="Соло">
+                <div class="movie-info">
+                    <div class="movie-title">Соло</div>
+                    <div class="movie-details">2018, Фантастика, Приключения</div>
+                </div>
+            </div>
+
+            <!-- Карточка фильма 7 -->
+            <div class="movie">
+                <div class="rating">7.8</div>
+                <img src="img/starWars.jpg" alt="Звёздные Войны">
+                <div class="movie-info">
+                    <div class="movie-title">Звёздные Войны: Пробуждение Силы</div>
+                    <div class="movie-details">2015, Фантастика, Боевик</div>
+                </div>
+            </div>
+
+            <!-- Карточка фильма 8 -->
+            <div class="movie">
+                <div class="rating">8.0</div>
+                <img src="img/zveropolis.jpg" alt="Зверополис">
+                <div class="movie-info">
+                    <div class="movie-title">Зверополис</div>
+                    <div class="movie-details">2016, Мультфильм, Комедия</div>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
