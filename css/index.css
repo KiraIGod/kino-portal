@@ -1,332 +1,289 @@
+        /* ===== БАЗОВЫЕ СТИЛИ ===== */
+        
+        /* Сброс стандартных отступов и границ для всех элементов */
         * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+            margin: 0;          /* Убирает внешние отступы */
+            padding: 0;         /* Убирает внутренние отступы */
+            box-sizing: border-box; /* Гарантирует, что padding и border включаются в ширину/высоту */
         }
 
+        /* Основные стили для тела документа */
         body {
-            font-family: 'IBM Plex Mono', monospace;
-            background-color: #0a0a0a;
-            color: #ffffff;
-            line-height: 1.4;
+            font-family: 'IBM Plex Mono', monospace; /* Основной шрифт */
+            background-color: #0a0a0a;               /* Темный фон сайта */
+            color: #ffffff;                          /* Белый цвет текста */
+            line-height: 1.4;                        /* Межстрочный интервал */
         }
 
-        /* Навигационное меню */
+        /* ===== НАВИГАЦИОННАЯ ПАНЕЛЬ ===== */
+        
         .navbar {
-            background: #4a148c;
-            padding: 20px 40px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            position: relative;
+            background: #4a148c;         /* Фиолетовый фон навигации */
+            padding: 20px 40px;          /* Внутренние отступы: 20px сверху/снизу, 40px слева/справа */
+            display: flex;               /* Flexbox для горизонтального расположения */
+            justify-content: space-between; /* Распределение пространства между элементами */
+            align-items: center;         /* Вертикальное выравнивание по центру */
+            position: relative;          /* Относительное позиционирование для дочерних элементов */
         }
 
+        /* Логотип/бренд в навигации */
         .nav-brand {
-            font-size: 24px;
-            font-weight: 600;
-            color: #fff;
-            letter-spacing: 1px;
-            flex: 1;
-            font-family: 'IBM Plex Mono', monospace;
+            font-size: 24px;             /* Размер шрифта */
+            font-weight: 600;            /* Жирность шрифта (полужирный) */
+            color: #fff;                 /* Белый цвет текста */
+            letter-spacing: 1px;         /* Межбуквенный интервал */
+            flex: 1;                     /* Занимает доступное пространство */
         }
 
+        /* Центральный контейнер для ссылок и поиска */
         .nav-center {
-            display: flex;
-            align-items: center;
-            gap: 40px;
-            position: absolute;
-            left: 50%;
-            transform: translateX(-50%);
+            display: flex;               /* Flexbox для горизонтального расположения */
+            align-items: center;         /* Вертикальное выравнивание */
+            gap: 40px;                   /* Расстояние между элементами */
+            position: absolute;          /* Абсолютное позиционирование */
+            left: 50%;                   /* Сдвиг на 50% от левого края */
+            transform: translateX(-50%); /* Сдвиг назад на 50% своей ширины для точного центрирования */
         }
 
+        /* Контейнер для навигационных ссылок */
         .nav-links {
-            display: flex;
-            gap: 40px;
+            display: flex;               /* Flexbox для горизонтального расположения */
+            gap: 40px;                   /* Расстояние между ссылками */
         }
 
+        /* Стили для отдельных ссылок навигации */
         .nav-links a {
-            color: #fff;
-            text-decoration: none;
-            font-size: 21px;
-            font-weight: 600;
-            font-family: 'IBM Plex Mono', monospace;
-            transition: all 0.3s ease;
-            padding: 8px 12px;
-            border-radius: 4px;
-            white-space: nowrap;
-            opacity: 0.3;
+            color: #fff;                 /* Белый цвет текста */
+            text-decoration: none;       /* Убирает подчеркивание */
+            font-size: 21px;             /* Размер шрифта */
+            font-weight: 600;            /* Жирность шрифта */
+            transition: all 0.3s ease;   /* Плавный переход для всех свойств */
+            padding: 8px 12px;           /* Внутренние отступы */
+            border-radius: 4px;          /* Закругленные углы */
+            white-space: nowrap;         /* Запрет переноса текста */
+            opacity: 0.3;                /* Полупрозрачность по умолчанию */
         }
 
+        /* Состояние при наведении на ссылки */
         .nav-links a:hover {
-            text-decoration: underline;
-            text-underline-offset: 29px;
-            opacity: 1;
-            color: #ffd700; /* Добавлено изменение цвета при наведении */
+            text-decoration: underline;  /* Подчеркивание при наведении */
+            text-underline-offset: 29px; /* Смещение подчеркивания вниз */
+            opacity: 1;                  /* Полная непрозрачность */
+            color: #ffd700;              /* Золотистый цвет текста */
         }
 
+        /* Контейнер для поиска */
         .search-container {
-            display: flex;
-            align-items: center;
+            display: flex;               /* Flexbox для горизонтального расположения */
+            align-items: center;         /* Вертикальное выравнивание */
         }
 
+        /* Поле ввода поиска */
         .search-input {
-            background: rgba(255, 255, 255, 0.1);
-            border: 1px solid #ffd700;
-            border-radius: 4px;
-            padding: 8px 12px;
-            color: #fff;
-            font-family: 'IBM Plex Mono', monospace;
-            width: 0;
-            opacity: 0;
-            transition: all 0.3s ease;
+            background: rgba(255, 255, 255, 0.1); /* Полупрозрачный белый фон */
+            border: 1px solid #ffd700;   /* Золотистая рамка */
+            border-radius: 4px;          /* Закругленные углы */
+            padding: 8px 12px;           /* Внутренние отступы */
+            color: #fff;                 /* Белый цвет текста */
+            font-family: 'IBM Plex Mono', monospace; /* Шрифт как у основного текста */
+            width: 0;                    /* Начальная ширина (скрыто) */
+            opacity: 0;                  /* Начальная прозрачность (скрыто) */
+            transition: all 0.3s ease;   /* Плавный переход для анимации */
         }
 
+        /* Активное состояние поля поиска (когда открыто) */
         .search-input.active {
-            width: 200px;
-            opacity: 1;
-            margin-right: 10px;
+            width: 200px;                /* Ширина поля поиска */
+            opacity: 1;                  /* Полная видимость */
+            margin-right: 10px;          /* Отступ справа от кнопки */
         }
 
+        /* Стили для placeholder текста */
         .search-input::placeholder {
-            color: #ccc;
+            color: #ccc;                 /* Серый цвет placeholder */
         }
 
+        /* Кнопка поиска */
         .search-button {
-            background: none;
-            border: none;
-            color: #ffd700;
-            font-size: 18px;
-            cursor: pointer;
-            padding: 8px;
-            border-radius: 4px;
-            transition: background-color 0.3s ease;
-            opacity: 0.3;
+            background: none;            /* Прозрачный фон */
+            border: none;                /* Без рамки */
+            color: #ffd700;              /* Золотистый цвет */
+            font-size: 18px;             /* Размер иконки */
+            cursor: pointer;             /* Указатель при наведении */
+            padding: 8px;                /* Внутренние отступы */
+            border-radius: 4px;          /* Закругленные углы */
+            transition: background-color 0.3s ease; /* Плавный переход фона */
+            opacity: 0.3;                /* Полупрозрачность по умолчанию */
         }
 
+        /* Состояние кнопки поиска при наведении */
         .search-button:hover {
-            opacity: 1;
+            opacity: 1;                  /* Полная непрозрачность */
         }
 
+        /* Контейнер для аватара пользователя */
         .nav-avatar {
-            flex: 1;
-            display: flex;
-            justify-content: flex-end;
+            flex: 1;                     /* Занимает доступное пространство */
+            display: flex;               /* Flexbox для выравнивания */
+            justify-content: flex-end;   /* Выравнивание по правому краю */
         }
 
+        /* Стили аватара пользователя */
         .avatar {
-            width: 44px;
-            height: 44px;
-            background-color: #ffd700;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #000;
-            font-weight: bold;
-            text-decoration: none;
-            transition: transform 0.3s ease;
-            font-family: 'IBM Plex Mono', monospace;
+            width: 44px;                 /* Ширина аватара */
+            height: 44px;                /* Высота аватара */
+            background-color: #ffd700;   /* Золотистый фон */
+            border-radius: 50%;          /* Круглая форма */
+            display: flex;               /* Flexbox для центрирования текста */
+            align-items: center;         /* Вертикальное центрирование */
+            justify-content: center;     /* Горизонтальное центрирование */
+            color: #000;                 /* Черный цвет текста */
+            font-weight: bold;           /* Жирный текст */
+            text-decoration: none;       /* Убирает подчеркивание */
+            transition: transform 0.3s ease; /* Плавная анимация трансформации */
         }
 
+        /* Анимация аватара при наведении */
         .avatar:hover {
-            transform: scale(1.1);
+            transform: scale(1.1);       /* Увеличение на 10% */
         }
 
+        /* ===== ОСНОВНОЙ КОНТЕЙНЕР СОДЕРЖИМОГО ===== */
+        
         .container {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 0 20px;
+            max-width: 1400px;           /* Максимальная ширина контента */
+            margin: 0 auto;              /* Центрирование по горизонтали */
+            padding: 0 20px;             /* Боковые отступы */
         }
 
-        /* Секции */
+        /* ===== СЕКЦИИ С ФИЛЬМАМИ ===== */
+        
+        /* Маленькая секция (Новое в подписке) */
         .section-small {
-            background-color: #000;
-            padding: 30px 0;
+            background-color: #000;      /* Черный фон секции */
+            padding: 30px 0;             /* Вертикальные отступы */
         }
 
+        /* Большая секция (Рекомендуем посмотреть) */
         .section-large {
-            background-color: #000;
-            padding: 50px 0;
+            background-color: #000;      /* Черный фон секции */
+            padding: 50px 0;             /* Большие вертикальные отступы */
         }
 
+        /* Заголовок секции */
         .section-header {
-            display: flex;
-            align-items: center;
-            margin-bottom: 40px;
+            display: flex;               /* Flexbox для расположения */
+            align-items: center;         /* Вертикальное выравнивание */
+            margin-bottom: 40px;         /* Отступ снизу */
         }
 
+        /* Название секции */
         .section-title {
-            font-size: 24px;
-            font-weight: 600;
-            color: #ffd700;
-            margin-right: 15px;
-            font-family: 'IBM Plex Mono', monospace;
+            font-size: 24px;             /* Размер шрифта */
+            font-weight: 600;            /* Жирность шрифта */
+            color: #ffd700;              /* Золотистый цвет */
+            margin-right: 15px;          /* Отступ справа */
         }
 
+        /* Кнопка "больше" в секции */
         .section-more {
-            color: #ffd700;
-            text-decoration: none;
-            font-size: 24px;
-            font-weight: 600;
-            width: 25px;
-            height: 60px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-family: 'IBM Plex Mono', monospace;
+            color: #ffd700;              /* Золотистый цвет */
+            text-decoration: none;       /* Убирает подчеркивание */
+            font-size: 24px;             /* Размер шрифта */
+            font-weight: 600;            /* Жирность шрифта */
+            width: 25px;                 /* Фиксированная ширина */
+            height: 60px;                /* Фиксированная высота */
+            display: flex;               /* Flexbox для центрирования */
+            align-items: center;         /* Вертикальное центрирование */
+            justify-content: center;     /* Горизонтальное центрирование */
         }
 
+        /* ===== СЕТКА ФИЛЬМОВ ===== */
+        
         .movies-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 40px;
+            display: grid;                          /* CSS Grid для сетки */
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Автоподбор колонок */
+            gap: 40px;                             /* Расстояние между карточками */
         }
 
+        /* Карточка фильма */
         .movie-card {
-            background: #1a1a1a;
-            border-radius: 12px;
-            overflow: hidden;
-            transition: all 0.3s ease;
-            border: 1px solid #333;
-            display: flex;
-            flex-direction: column;
-            height: fit-content;
+            background: #1a1a1a;         /* Темно-серый фон карточки */
+            border-radius: 12px;         /* Закругленные углы */
+            overflow: hidden;            /* Скрывает выходящее за границы */
+            transition: all 0.3s ease;   /* Плавный переход всех свойств */
+            border: 1px solid #333;      /* Темно-серая рамка */
+            display: flex;               /* Flexbox для вертикального расположения */
+            flex-direction: column;      /* Вертикальное направление */
+            height: fit-content;         /* Высота по содержимому */
         }
 
+        /* Анимация карточки при наведении */
         .movie-card:hover {
-            transform: translateY(-8px);
-            border-color: #ffd700;
-            box-shadow: 0 10px 30px rgba(255, 215, 0, 0.2);
+            transform: translateY(-8px); /* Подъем карточки вверх */
+            border-color: #ffd700;       /* Золотистая рамка */
+            box-shadow: 0 10px 30px rgba(255, 215, 0, 0.2); /* Золотистая тень */
         }
 
+        /* Контейнер для изображения фильма */
         .movie-image {
-            width: 100%;
-            height: 440px;
-            background-color: #333;
-            position: relative;
-            overflow: hidden;
+            width: 100%;                 /* Ширина 100% родителя */
+            height: 440px;               /* Фиксированная высота для постеров */
+            background-color: #333;      /* Серый фон-заглушка */
+            position: relative;          /* Для позиционирования рейтинга */
+            overflow: hidden;            /* Скрывает выходящее за границы */
         }
 
+        /* Изображение постера */
         .movie-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.3s ease;
+            width: 100%;                 /* Ширина 100% контейнера */
+            height: 100%;                /* Высота 100% контейнера */
+            object-fit: cover;           /* Обрезка и заполнение контейнера */
+            transition: transform 0.3s ease; /* Плавное увеличение */
         }
 
+        /* Увеличение изображения при наведении на карточку */
         .movie-card:hover .movie-image img {
-            transform: scale(1.05);
+            transform: scale(1.05);      /* Увеличение на 5% */
         }
 
+        /* Бейдж с рейтингом фильма */
         .movie-rating {
-            position: absolute;
-            top: 15px;
-            left: 15px;
-            background: #ffd700;
-            color: #000;
-            font-size: 16px;
-            font-weight: 600;
-            padding: 8px 12px;
-            border-radius: 6px;
-            z-index: 2;
-            font-family: 'IBM Plex Mono', monospace;
+            position: absolute;          /* Абсолютное позиционирование */
+            top: 15px;                   /* Отступ сверху */
+            left: 15px;                  /* Отступ слева */
+            background: #ffd700;         /* Золотистый фон */
+            color: #000;                 /* Черный цвет текста */
+            font-size: 16px;             /* Размер шрифта */
+            font-weight: 600;            /* Жирность шрифта */
+            padding: 8px 12px;           /* Внутренние отступы */
+            border-radius: 6px;          /* Закругленные углы */
+            z-index: 2;                  /* Поверх других элементов */
         }
 
+        /* Контейнер для текстовой информации о фильме */
         .movie-content {
-            padding: 25px;
-            flex-grow: 1;
-            display: flex;
-            flex-direction: column;
+            padding: 25px;               /* Внутренние отступы */
+            flex-grow: 1;                /* Занимает доступное пространство */
+            display: flex;               /* Flexbox для расположения */
+            flex-direction: column;      /* Вертикальное направление */
         }
 
+        /* Название фильма */
         .movie-title {
-            font-size: 18px;
-            font-weight: 600;
-            color: #ccc;
-            margin-bottom: 12px;
-            line-height: 1.3;
-            min-height: 46px;
-            display: flex;
-            align-items: center;
-            font-family: 'IBM Plex Mono', monospace;
+            font-size: 18px;             /* Размер шрифта */
+            font-weight: 600;            /* Жирность шрифта */
+            color: #ccc;                 /* Светло-серый цвет */
+            margin-bottom: 12px;         /* Отступ снизу */
+            line-height: 1.3;            /* Межстрочный интервал */
+            min-height: 46px;            /* Минимальная высота для выравнивания */
+            display: flex;               /* Flexbox для центрирования */
+            align-items: center;         /* Вертикальное центрирование */
         }
 
+        /* Информация о фильме (год и жанры) */
         .movie-info {
-            font-size: 14px;
-            color: #ccc;
-            margin-top: auto;
-            font-family: 'IBM Plex Mono', monospace;
+            font-size: 14px;             /* Меньший размер шрифта */
+            color: #ccc;                 /* Светло-серый цвет */
+            margin-top: auto;            /* Прижимает к низу карточки */
         }
-
-        /* Адаптивность для вертикальных постеров */
-        @media (max-width: 1200px) {
-            .movies-grid {
-                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-                gap: 30px;
-            }
-            
-            .movie-image {
-                height: 400px;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .navbar {
-                padding: 15px 20px;
-                flex-direction: column;
-                gap: 15px;
-            }
-
-            .nav-center {
-                position: static;
-                transform: none;
-                gap: 20px;
-                justify-content: center;
-                width: 100%;
-                flex-wrap: wrap;
-            }
-            
-            .nav-brand, .nav-avatar {
-                flex: none;
-                width: 100%;
-                text-align: center;
-                justify-content: center;
-            }
-            
-            .movies-grid {
-                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-                gap: 25px;
-            }
-            
-            .movie-image {
-                height: 350px;
-            }
-            
-            .search-input.active {
-                width: 150px;
-            }
-            
-            .container {
-                padding: 0 15px;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .movies-grid {
-                grid-template-columns: 1fr;
-                gap: 20px;
-            }
-            
-            .movie-image {
-                height: 500px;
-            }
-            
-            .movie-content {
-                padding: 20px;
-            }
-            
-            .nav-center {
-                flex-direction: column;
-                gap: 10px;
-            }
-        }   
