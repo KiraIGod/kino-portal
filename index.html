@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Эльбрус Кино</title>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/index.css">
+
+</head>
+<body>
+    <!-- Навигационное меню -->
+    <nav class="navbar">
+        <div class="nav-brand">KИHO</div>
+        <div class="nav-center">
+            <div class="nav-links">
+                <a href="#">MOE KИHO</a>
+                <a href="#">МАГАЗИН</a>
+                <a href="#">ПОКУПКИ</a>
+            </div>
+            <div class="search-container">
+                <input type="text" class="search-input" placeholder="Поиск...">
+                <button class="search-button">⌕</button>
+            </div>
+        </div>
+        <div class="nav-avatar">
+            <a href="#" class="avatar">SP</a>
+        </div>
+    </nav>
+
+    <!-- Секция "Новое в подписке" -->
+    <section class="section-small">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-title">Новое в подписке</div>
+                <a href="#" class="section-more">></a>
+            </div>
+            
+            <div class="movies-grid">
+                <div class="movie-card">
+                    <div class="movie-image">
+                        <img src="img/bryklin.jpg" alt="Сиротский Бруклин">
+                        <div class="movie-rating">8.4</div>
+                    </div>
+                    <div class="movie-content">
+                        <div class="movie-title">Сиротский Бруклин</div>
+                        <div class="movie-info">2019, Драма, Детектив</div>
+                    </div>
+                </div>
+
+                <div class="movie-card">
+                    <div class="movie-image">
+                        <img src="img/doctorStrange.jpg" alt="Доктор Стрэндж">
+                        <div class="movie-rating">7.5</div>
+                    </div>
+                    <div class="movie-content">
+                        <div class="movie-title">Доктор Стрэндж</div>
+                        <div class="movie-info">2016, Фантастика, Боевик</div>
+                    </div>
+                </div>
+
+                <div class="movie-card">
+                    <div class="movie-image">
+                        <img src="img/glass.jpg" alt="Стекло">
+                        <div class="movie-rating">6.7</div>
+                    </div>
+                    <div class="movie-content">
+                        <div class="movie-title">Стекло</div>
+                        <div class="movie-info">2019, Триллер, Драма</div>
+                    </div>
+                </div>
+
+                <div class="movie-card">
+                    <div class="movie-image">
+                        <img src="img/minions.jpg" alt="Миньоны">
+                        <div class="movie-rating">6.9</div>
+                    </div>
+                    <div class="movie-content">
+                        <div class="movie-title">Миньоны</div>
+                        <div class="movie-info">2015, Мультфильм, Комедия</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Секция "Рекомендуем посмотреть" -->
+    <section class="section-large">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-title">Рекомендуем посмотреть</div>
+                <a href="#" class="section-more">></a>
+            </div>
+
+            <div class="movies-grid">
+                <div class="movie-card">
+                    <div class="movie-image">
+                        <img src="img/mulan.jpeg" alt="Мулан">
+                        <div class="movie-rating">7.2</div>
+                    </div>
+                    <div class="movie-content">
+                        <div class="movie-title">Мулан</div>
+                        <div class="movie-info">2020, Боевик, Драма</div>
+                    </div>
+                </div>
+
+                <div class="movie-card">
+                    <div class="movie-image">
+                        <img src="img/solo.jpg" alt="Соло">
+                        <div class="movie-rating">6.9</div>
+                    </div>
+                    <div class="movie-content">
+                        <div class="movie-title">Соло</div>
+                        <div class="movie-info">2018, Фантастика, Приключения</div>
+                    </div>
+                </div>
+
+                <div class="movie-card">
+                    <div class="movie-image">
+                        <img src="img/starWars.jpg" alt="Звёздные Войны: Пробуждение Силы">
+                        <div class="movie-rating">7.8</div>
+                    </div>
+                    <div class="movie-content">
+                        <div class="movie-title">Звёздные Войны: Пробуждение Силы</div>
+                        <div class="movie-info">2015, Фантастика, Боевик</div>
+                    </div>
+                </div>
+
+                <div class="movie-card">
+                    <div class="movie-image">
+                        <img src="img/zveropolis.jpg" alt="Зверополис">
+                        <div class="movie-rating">8.0</div>
+                    </div>
+                    <div class="movie-content">
+                        <div class="movie-title">Зверополис</div>
+                        <div class="movie-info">2016, Мультфильм, Комедия</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Функционал поиска
+        const searchButton = document.querySelector('.search-button');
+        const searchInput = document.querySelector('.search-input');
+        
+        searchButton.addEventListener('click', function() {
+            searchInput.classList.toggle('active');
+            if (searchInput.classList.contains('active')) {
+                searchInput.focus();
+            }
+        });
+        
+        // Закрытие поиска при клике вне поля
+        document.addEventListener('click', function(event) {
+            if (!event.target.closest('.search-container')) {
+                searchInput.classList.remove('active');
+            }
+        });
+    </script>
+</body>
+</html>
